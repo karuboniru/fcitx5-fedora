@@ -2,6 +2,7 @@
 %global commit c87ea4885fca7b3f906f21e3b4bb5210dd37adc8
 %forgemeta
 %global dictver 20121020
+%global _xinputconf %{_sysconfdir}/X11/xinit/xinput.d/fcitx5.conf
 
 Name:           fcitx5
 Version:        0
@@ -26,6 +27,10 @@ BuildRequires:  cldr-emoji-annotation-devel, libuuid-devel
 BuildRequires:  expat-devel, json-c-devel, xkeyboard-config-devel
 BuildRequires:  xcb-util-keysyms-devel
 Requires:       dbus-x11
+Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
+Requires:       imsettings
+Requires(post):     %{_sbindir}/alternatives
+Requires(postun):   %{_sbindir}/alternatives
 
 %description
 Fcitx 5 is a generic input method framework released under LGPL-2.1+.
@@ -36,6 +41,12 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Devel files for fcitx5
+
+%package libs
+Summary:        Shared libraries for Fcitx
+
+%description libs
+The %{name}-libs package provides shared libraries for Fcitx
 
 %prep
 %forgesetup
@@ -54,12 +65,22 @@ install -pm 644 -D %{S:2} %{buildroot}%{_xinputconf}
 %check
 %ctest
 
+%post
+%{_sbindir}/alternatives --install %{_sysconfdir}/X11/xinit/xinputrc xinputrc %{_xinputconf} 55 || :
+
+%postun
+if [ "$1" = "0" ]; then
+  %{_sbindir}/alternatives --remove xinputrc %{_xinputconf} || :
+  # if alternative was set to manual, reset to auto
+  [ -L %{_sysconfdir}/alternatives/xinputrc -a "`readlink %{_sysconfdir}/alternatives/xinputrc`" = "%{_xinputconf}" ] && %{_sbindir}/alternatives --auto xinputrc || :
+fi
+
+%ldconfig_scriptlets libs
+
 %files -f %{name}.lang
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
 %{_bindir}/*
-%{_libdir}/%{name}
-%{_libdir}/*.so.*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}-configtool.desktop
 %{_datadir}/%{name}
@@ -71,6 +92,9 @@ install -pm 644 -D %{S:2} %{buildroot}%{_xinputconf}
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 
+%files libs
+%{_libdir}/%{name}
+%{_libdir}/*.so.*
 
 
 %changelog
