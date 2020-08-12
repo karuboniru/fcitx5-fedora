@@ -5,7 +5,7 @@
 Name:           fcitx5-gtk
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        Gtk im module and glib based dbus client library
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -17,7 +17,7 @@ BuildRequires:  ninja-build, fcitx5-devel, gtk2-devel, gtk3-devel
 Requires:       dbus-x11, fcitx5
 
 %description
-The fcitx5-gtk package (still in testing!)
+Gtk im module and glib based dbus client library.
 
 %package devel
 Summary:        Development files for %{name}
@@ -51,4 +51,7 @@ devel files for fcitx5-gtk
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package
+
 

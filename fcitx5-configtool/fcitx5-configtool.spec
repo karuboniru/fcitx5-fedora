@@ -6,7 +6,7 @@
 Name:           fcitx5-configtool
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        Configuration tools used by fcitx5
 License:        GPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -26,7 +26,7 @@ BuildRequires:  kf5-kitemviews-devel, libxkbfile-devel
 Requires:       dbus-x11, fcitx5
 
 %description
-The fcitx5-configtool package (still in testing!)
+Configuration tools used by fcitx5.
 
 %prep
 %forgeautosetup -p1
@@ -53,4 +53,5 @@ The fcitx5-configtool package (still in testing!)
 %{_datadir}/metainfo/org.fcitx.fcitx5.kcm.appdata.xml
 
 %changelog
-
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package

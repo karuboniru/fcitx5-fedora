@@ -6,7 +6,7 @@
 Name:           fcitx5
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        Next generation of fcitx
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -27,14 +27,14 @@ BuildRequires:  xcb-util-keysyms-devel
 Requires:       dbus-x11
 
 %description
-The fcitx5 package (still in testing!)
+Fcitx 5 is a generic input method framework released under LGPL-2.1+.
 
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-devel files for fcitx5
+Devel files for fcitx5
 
 %prep
 %forgesetup
@@ -72,4 +72,5 @@ cp %{S:1} src/modules/spell/dict/
 
 
 %changelog
-
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package

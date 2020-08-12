@@ -5,7 +5,7 @@
 Name:           fcitx5-qt
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        Qt library and IM module for fcitx5
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -19,7 +19,7 @@ BuildRequires:  gettext-devel, qt5-qtbase-private-devel
 Requires:       dbus-x11, fcitx5
 
 %description
-The fcitx5-qt package (still in testing!)
+Qt library and IM module for fcitx5.
 
 %package devel
 Summary:        Development files for %{name}
@@ -55,4 +55,5 @@ devel files for fcitx5-qt
 %{_libdir}/*.so
 
 %changelog
-
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package

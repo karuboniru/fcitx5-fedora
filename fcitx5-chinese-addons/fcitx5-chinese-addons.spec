@@ -6,7 +6,7 @@
 Name:           fcitx5-chinese-addons
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        Chinese related addon for fcitx5
 License:        GPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -24,7 +24,11 @@ BuildRequires:  opencc-devel, fcitx5-lua-devel
 Requires:       dbus-x11, fcitx5
 
 %description
-The fcitx5-chinese-addons package (still in testing!)
+This provides pinyin and table input method
+ support for fcitx5. Released under LGPL-2.1+.
+
+im/pinyin/emoji.txt is derived from Unicode 
+CLDR with modification.
 
 %package devel
 Summary:        Development files for %{name}
@@ -64,3 +68,6 @@ ln -s %{S:2} modules/pinyinhelper
 %{_libdir}/cmake/*
 
 %changelog
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package
+

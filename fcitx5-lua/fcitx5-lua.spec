@@ -5,7 +5,7 @@
 Name:           fcitx5-lua
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        Lua support for fcitx.
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -18,7 +18,7 @@ BuildRequires:  gettext-devel
 Requires:       dbus-x11, fcitx5
 
 %description
-The fcitx5-lua package (still in testing!)
+Lua support for fcitx.
 
 %package devel
 Summary:        Development files for %{name}
@@ -54,4 +54,5 @@ devel files for fcitx5-lua
 
 
 %changelog
-
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package

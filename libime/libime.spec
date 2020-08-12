@@ -13,7 +13,7 @@ Name:       libime
 Version:    0
 License:    GPLv2
 Release:    0.1%{?dist}
-Summary:    libime package
+Summary:    This is a library to support generic input method implementation.
 URL:        %{forgeurl0}
 Source0:    %{forgesource0}
 Source1:    %{forgesource1}
@@ -27,7 +27,7 @@ BuildRequires: python3, doxygen, zlib-devel, bzip2-devel
 BuildRequires: xz-devel, eigen3-devel
 
 %description
-libime package
+This is a library to support generic input method implementation.
 
 %package devel
 Summary:        Development files for %{name}
@@ -70,3 +70,5 @@ ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
 
 
 %changelog
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package

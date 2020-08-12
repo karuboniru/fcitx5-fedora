@@ -53,3 +53,6 @@ devel files for xcb-imdkit
 %{_libdir}/pkgconfig/xcb-imdkit.pc
 
 %changelog
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package
+

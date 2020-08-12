@@ -6,7 +6,7 @@
 Name:           fcitx5-rime
 Version:        0
 Release:        0.1%{?dist}
-Summary:        fcitx5
+Summary:        RIME support for Fcitx
 License:        GPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -19,7 +19,8 @@ BuildRequires:  brise
 Requires:       fcitx5
 
 %description
-The fcitx5-rime package (still in testing!)
+RIME(中州韻輸入法引擎) is mainly a Traditional Chinese 
+input method engine.
 
 %prep
 %forgesetup
@@ -45,3 +46,5 @@ The fcitx5-rime package (still in testing!)
 
 
 %changelog
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+- initial package
