@@ -85,6 +85,7 @@ fi
 %{_datadir}/applications/%{name}-configtool.desktop
 %{_datadir}/%{name}
 %{_datadir}/icons/hicolor/*/apps/*
+%{_xinputconf}
 
 %files devel
 %{_includedir}/*
