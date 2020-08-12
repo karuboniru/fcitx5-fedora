@@ -11,6 +11,7 @@ License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
 Source1:        https://download.fcitx-im.org/data/en_dict-%{dictver}.tar.gz
+Source2:        fcitx5-xinput
 
 
 BuildRequires:  cmake, extra-cmake-modules
@@ -46,6 +47,7 @@ cp %{S:1} src/modules/spell/dict/
 
 %install
 %cmake_install
+install -pm 644 -D %{S:2} %{buildroot}%{_xinputconf}
 
 %find_lang %{name}
 
