@@ -1,6 +1,7 @@
 %global forgeurl https://github.com/fcitx/fcitx5-configtool
 %global commit ecd16e5f5bfeaded9bb59b88f484871d14e016e5
 %forgemeta
+%global translation_domain org.fcitx.fcitx5.kcm
 
 Name:           fcitx5-configtool
 Version:        0
@@ -37,9 +38,10 @@ The fcitx5-configtool package (still in testing!)
 %cmake_install
 
 %find_lang %{name}
+%find_lang %{translation_domain}
 
 
-%files -f %{name}.lang
+%files -f %{name}.lang -f %{translation_domain}.lang 
 %license LICENSES/GPL-2.0-or-later.txt
 %doc README
 %{_bindir}/*
