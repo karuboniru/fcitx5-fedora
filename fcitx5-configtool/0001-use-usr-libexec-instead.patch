@@ -1,0 +1,39 @@
+From 2979478f598cf7e27c92b7418be83f7671087283 Mon Sep 17 00:00:00 2001
+From: Qiyu Yan <yanqiyu@fedoraproject.org>
+Date: Wed, 12 Aug 2020 15:04:42 +0800
+Subject: [PATCH] use /usr/libexec instead
+
+---
+ src/kcm/main.cpp                          | 2 +-
+ src/lib/configwidgetslib/optionwidget.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/kcm/main.cpp b/src/kcm/main.cpp
+index 5f87580..5751871 100644
+--- a/src/kcm/main.cpp
++++ b/src/kcm/main.cpp
+@@ -246,7 +246,7 @@ void FcitxModule::launchExternal(const QString &uri) {
+     if (uri.startsWith("fcitx://config/addon/")) {
+         auto wrapperPath =
+             stringutils::joinPath(StandardPath::global().fcitxPath("libdir"),
+-                                  "fcitx5/libexec/fcitx5-qt5-gui-wrapper");
++                                  "../libexec/fcitx5/fcitx5-qt5-gui-wrapper");
+         QStringList args;
+         if (QGuiApplication::platformName() == "xcb") {
+             auto window = mainUi()->window();
+diff --git a/src/lib/configwidgetslib/optionwidget.cpp b/src/lib/configwidgetslib/optionwidget.cpp
+index 32548f6..a216591 100644
+--- a/src/lib/configwidgetslib/optionwidget.cpp
++++ b/src/lib/configwidgetslib/optionwidget.cpp
+@@ -382,7 +382,7 @@ public:
+             if (uri_.startsWith("fcitx://config/addon/")) {
+                 auto wrapperPath = stringutils::joinPath(
+                     StandardPath::global().fcitxPath("libdir"),
+-                    "fcitx5/libexec/fcitx5-qt5-gui-wrapper");
++                    "../libexec/fcitx5/fcitx5-qt5-gui-wrapper");
+                 QStringList args;
+                 if (QGuiApplication::platformName() == "xcb") {
+                     auto wid = parent->winId();
+-- 
+2.26.2
+

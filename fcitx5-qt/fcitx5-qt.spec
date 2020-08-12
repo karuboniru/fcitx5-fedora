@@ -29,7 +29,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 devel files for fcitx5-qt
 
 %prep
-%forgeautosetup
+%forgeautosetup -p1
 
 %build
 %cmake -GNinja -DENABLE_QT4=False

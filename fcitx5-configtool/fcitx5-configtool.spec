@@ -10,6 +10,7 @@ Summary:        fcitx5
 License:        GPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
+Patch0:         0001-use-usr-libexec-instead.patch
 
 
 BuildRequires:  cmake, extra-cmake-modules
@@ -28,7 +29,7 @@ Requires:       dbus-x11, fcitx5
 The fcitx5-configtool package (still in testing!)
 
 %prep
-%forgesetup
+%forgeautosetup -p1
 
 %build
 %cmake -GNinja -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
