@@ -5,7 +5,7 @@
 
 Name:           fcitx5-configtool
 Version:        0
-Release:        1%{?dist}
+Release:        0.1%{?dist}
 Summary:        fcitx5
 License:        GPLv2+
 URL:            %{forgeurl}

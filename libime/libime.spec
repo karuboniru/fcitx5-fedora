@@ -12,7 +12,7 @@
 Name:       libime  
 Version:    0
 License:    GPLv2
-Release:    1%{?dist}
+Release:    0.1%{?dist}
 Summary:    libime package
 URL:        %{forgeurl0}
 Source0:    %{forgesource0}

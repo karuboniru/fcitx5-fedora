@@ -5,7 +5,7 @@
 
 Name:           fcitx5
 Version:        0
-Release:        1%{?dist}
+Release:        0.1%{?dist}
 Summary:        fcitx5
 License:        LGPLv2+
 URL:            %{forgeurl}

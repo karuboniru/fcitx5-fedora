@@ -4,7 +4,7 @@
 
 Name:       xcb-imdkit
 Version:    0
-Release:    1%{?dist}
+Release:    0.1%{?dist}
 Summary:    input method development support for xcb
 License:    LGPLv2
 URL:        %{forgeurl}
