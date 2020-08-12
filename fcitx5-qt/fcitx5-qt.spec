@@ -1,5 +1,5 @@
 %global forgeurl https://github.com/fcitx/fcitx5-qt
-%global commit 91a4b144c06487f54e05a70cea02d5b84f84563c
+%global commit 3ddd34aa720cb4efd451a686c389d579b1914425
 %forgemeta
 
 Name:           fcitx5-qt
@@ -9,6 +9,7 @@ Summary:        fcitx5
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
+Patch0:         0001-use-usr-libexec-instead.patch
 
 
 BuildRequires:  cmake, extra-cmake-modules
@@ -28,7 +29,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 devel files for fcitx5-qt
 
 %prep
-%forgesetup
+%forgeautosetup
 
 %build
 %cmake -GNinja -DENABLE_QT4=False
@@ -46,6 +47,7 @@ devel files for fcitx5-qt
 %{_libdir}/*.so.*
 %{_libdir}/fcitx5/*
 %{_libdir}/qt5/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
+%{_libexecdir}/fcitx5
 
 %files devel
 %{_includedir}/Fcitx5Qt5/*

@@ -1,0 +1,22 @@
+From fc7b1bd26ebcaaf894fc9b9d9c2f564254618fce Mon Sep 17 00:00:00 2001
+From: Qiyu Yan <yanqiyu@fedoraproject.org>
+Date: Wed, 12 Aug 2020 14:51:46 +0800
+Subject: [PATCH] use /usr/libexec instead
+
+---
+ qt5/guiwrapper/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/qt5/guiwrapper/CMakeLists.txt b/qt5/guiwrapper/CMakeLists.txt
+index a5baafc..a68a506 100644
+--- a/qt5/guiwrapper/CMakeLists.txt
++++ b/qt5/guiwrapper/CMakeLists.txt
+@@ -18,4 +18,4 @@ target_link_libraries(fcitx5-qt5-gui-wrapper
+       Fcitx5Qt5::WidgetsAddons
+ )
+ 
+-install(TARGETS fcitx5-qt5-gui-wrapper DESTINATION "${CMAKE_INSTALL_LIBDIR}/fcitx5/libexec")
++install(TARGETS fcitx5-qt5-gui-wrapper DESTINATION "${CMAKE_INSTALL_LIBEXECDIR}/fcitx5")
+-- 
+2.26.2
+
