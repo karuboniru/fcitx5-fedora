@@ -7,7 +7,7 @@ Name:           fcitx5
 Version:        0
 Release:        1%{?dist}
 Summary:        fcitx5
-License:        GPLv2+
+License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
 Source1:        https://download.fcitx-im.org/data/en_dict-%{dictver}.tar.gz

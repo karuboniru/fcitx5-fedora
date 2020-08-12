@@ -6,7 +6,7 @@ Name:           fcitx5-gtk
 Version:        0
 Release:        1%{?dist}
 Summary:        fcitx5
-License:        GPLv2+
+License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
 
