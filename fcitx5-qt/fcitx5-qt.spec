@@ -14,7 +14,7 @@ Source:         %{forgesource}
 BuildRequires:  cmake, extra-cmake-modules
 BuildRequires:  gcc-c++, make, libxkbcommon-x11-devel
 BuildRequires:  ninja-build, fcitx5-devel, qt5-qtbase-devel
-BuildRequires:  gettext-devel
+BuildRequires:  gettext-devel, qt5-qtbase-private-devel
 Requires:       dbus-x11, fcitx5
 
 %description
