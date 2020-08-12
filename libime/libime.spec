@@ -23,7 +23,8 @@ Source4:    https://download.fcitx-im.org/data/table.tar.gz
 
 BuildRequires: cmake, make, ninja-build, gcc-c++
 BuildRequires: fcitx5-devel, boost-devel, extra-cmake-modules
-BuildRequires: python3, doxygen
+BuildRequires: python3, doxygen, zlib-devel, bzip2-devel
+BuildRequires: xz-devel, eigen3-devel
 
 %description
 libime package
@@ -36,9 +37,11 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Development files for %{name}
 
 %prep
-%forgesetup -a
+%forgeautosetup
 rmdir %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm
-ln -s %{_builddir}/kenlm-%{commit1} %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm
+tar xf %{S:1} --directory=%{_builddir}/%{name}-%{commit0}/src/libime/core/
+ln -s %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm-%{commit1} \
+    %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm
 ln -s %{S:2} %{_builddir}/%{name}-%{commit0}/data
 ln -s %{S:3} %{_builddir}/%{name}-%{commit0}/data
 ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
