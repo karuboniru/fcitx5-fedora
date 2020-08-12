@@ -14,7 +14,7 @@ Source:         %{forgesource}
 BuildRequires:  cmake, extra-cmake-modules
 BuildRequires:  gcc-c++, make, gobject-introspection-devel
 BuildRequires:  ninja-build, fcitx5-devel, gtk2-devel, gtk3-devel
-Requires:       dbus-x11, fcitx5
+Requires:       fcitx5
 
 %description
 Gtk im module and glib based dbus client library.

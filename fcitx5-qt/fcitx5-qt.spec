@@ -16,7 +16,7 @@ BuildRequires:  cmake, extra-cmake-modules
 BuildRequires:  gcc-c++, make, libxkbcommon-x11-devel
 BuildRequires:  ninja-build, fcitx5-devel, qt5-qtbase-devel
 BuildRequires:  gettext-devel, qt5-qtbase-private-devel
-Requires:       dbus-x11, fcitx5
+Requires:       fcitx5
 
 %description
 Qt library and IM module for fcitx5.

@@ -21,7 +21,7 @@ BuildRequires:  curl-devel, fmt-devel, gettext-devel
 BuildRequires:  fcitx5-qt-devel, qt5-qtwebkit-devel
 BuildRequires:  qt5-qtwebengine-devel, libime-devel
 BuildRequires:  opencc-devel, fcitx5-lua-devel
-Requires:       dbus-x11, fcitx5
+Requires:       fcitx5
 
 %description
 This provides pinyin and table input method

@@ -23,7 +23,7 @@ BuildRequires:  kf5-kwidgetsaddons-devel, kf5-kirigami2-devel
 BuildRequires:  kf5-kdeclarative-devel, kf5-kpackage-devel
 BuildRequires:  kf5-ki18n-devel, kf5-kcoreaddons-devel
 BuildRequires:  kf5-kitemviews-devel, libxkbfile-devel
-Requires:       dbus-x11, fcitx5
+Requires:       fcitx5
 
 %description
 Configuration tools used by fcitx5.
