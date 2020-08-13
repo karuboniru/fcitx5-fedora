@@ -7,7 +7,7 @@ Name:           fcitx5-rime
 Version:        0
 Release:        0.1%{?dist}
 Summary:        RIME support for Fcitx
-License:        GPLv2+
+License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
 

@@ -7,7 +7,7 @@ Name:           fcitx5-chinese-addons
 Version:        0
 Release:        0.1%{?dist}
 Summary:        Chinese related addon for fcitx5
-License:        GPLv2+
+License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
 Source1:        https://download.fcitx-im.org/data/py_table-%{dictver}.tar.gz

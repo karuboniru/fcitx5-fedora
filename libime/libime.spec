@@ -11,7 +11,7 @@
 
 Name:       libime  
 Version:    0
-License:    GPLv2
+License:    LGPLv2+
 Release:    0.1%{?dist}
 Summary:    This is a library to support generic input method implementation
 URL:        %{forgeurl0}
@@ -57,6 +57,8 @@ ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
 %ctest
 
 %files
+%license LICENSES/LGPL-2.1-or-later.txt
+%doc README.md 
 %{_bindir}/*
 %{_libdir}/*.so.*
 %{_datadir}/libime
