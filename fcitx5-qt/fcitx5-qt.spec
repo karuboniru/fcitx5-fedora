@@ -26,7 +26,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-devel files for fcitx5-qt
+Devel files for fcitx5-qt
 
 %prep
 %forgeautosetup -p1
@@ -55,5 +55,5 @@ devel files for fcitx5-qt
 %{_libdir}/*.so
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812git3ddd34a
 - initial package

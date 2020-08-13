@@ -13,7 +13,7 @@ Name:       libime
 Version:    0
 License:    GPLv2
 Release:    0.1%{?dist}
-Summary:    This is a library to support generic input method implementation.
+Summary:    This is a library to support generic input method implementation
 URL:        %{forgeurl0}
 Source0:    %{forgesource0}
 Source1:    %{forgesource1}
@@ -70,5 +70,5 @@ ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
 
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gita108d15.s20200812git96d303c
 - initial package

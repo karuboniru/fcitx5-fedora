@@ -25,7 +25,7 @@ Requires:       fcitx5
 
 %description
 This provides pinyin and table input method
- support for fcitx5. Released under LGPL-2.1+.
+support for fcitx5. Released under LGPL-2.1+.
 
 im/pinyin/emoji.txt is derived from Unicode 
 CLDR with modification.
@@ -68,6 +68,6 @@ ln -s %{S:2} modules/pinyinhelper
 %{_libdir}/cmake/*
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitef9beb7
 - initial package
 

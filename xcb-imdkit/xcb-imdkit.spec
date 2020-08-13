@@ -5,7 +5,7 @@
 Name:       xcb-imdkit
 Version:    0
 Release:    0.1%{?dist}
-Summary:    input method development support for xcb
+Summary:    Input method development support for xcb
 License:    LGPLv2
 URL:        %{forgeurl}
 Source:     %{forgesource}
@@ -25,7 +25,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-devel files for xcb-imdkit
+Devel files for xcb-imdkit
 
 %prep
 %forgesetup
@@ -53,6 +53,6 @@ devel files for xcb-imdkit
 %{_libdir}/pkgconfig/xcb-imdkit.pc
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitd6609a7
 - initial package
 

@@ -24,7 +24,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-devel files for fcitx5-gtk
+Devel files for fcitx5-gtk.
 
 %prep
 %forgesetup
@@ -51,7 +51,5 @@ devel files for fcitx5-gtk
 %{_libdir}/pkgconfig/*
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitfc335f1
 - initial package
-
-

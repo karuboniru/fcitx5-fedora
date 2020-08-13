@@ -5,7 +5,7 @@
 Name:           fcitx5-lua
 Version:        0
 Release:        0.1%{?dist}
-Summary:        Lua support for fcitx.
+Summary:        Lua support for fcitx
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
@@ -25,7 +25,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-devel files for fcitx5-lua
+Devel files for fcitx5-lua
 
 %prep
 %forgesetup
@@ -54,5 +54,5 @@ devel files for fcitx5-lua
 
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitd705404
 - initial package

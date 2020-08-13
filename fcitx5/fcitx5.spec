@@ -1,5 +1,5 @@
 %global forgeurl https://github.com/fcitx/fcitx5
-%global commit c87ea4885fca7b3f906f21e3b4bb5210dd37adc8
+%global commit 87fb655852092f3ed2f79a3aac86fc6d5d92069f
 %forgemeta
 %global dictver 20121020
 %global _xinputconf %{_sysconfdir}/X11/xinit/xinput.d/fcitx5.conf
@@ -99,5 +99,8 @@ fi
 
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Thu Aug 13 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200813git87fb655
+- new version
+
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitc87ea48
 - initial package

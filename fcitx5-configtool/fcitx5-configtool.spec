@@ -53,5 +53,5 @@ Configuration tools used by fcitx5.
 %{_datadir}/metainfo/org.fcitx.fcitx5.kcm.appdata.xml
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitecd16e5
 - initial package
