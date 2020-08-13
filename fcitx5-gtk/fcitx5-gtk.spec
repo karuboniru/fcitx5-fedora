@@ -12,7 +12,7 @@ Source:         %{forgesource}
 
 
 BuildRequires:  cmake, extra-cmake-modules
-BuildRequires:  gcc-c++, make, gobject-introspection-devel
+BuildRequires:  gcc-c++, gobject-introspection-devel
 BuildRequires:  ninja-build, fcitx5-devel, gtk2-devel, gtk3-devel
 Requires:       fcitx5
 
@@ -30,7 +30,7 @@ Devel files for fcitx5-gtk.
 %forgesetup
 
 %build
-%cmake -GNinja -DENABLE_QT4=False
+%cmake -GNinja
 %cmake_build 
 
 %install

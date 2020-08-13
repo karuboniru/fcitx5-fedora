@@ -13,7 +13,7 @@ Source:         %{forgesource}
 
 
 BuildRequires:  cmake, extra-cmake-modules
-BuildRequires:  gcc-c++, make, ninja-build, gettext-devel
+BuildRequires:  gcc-c++, ninja-build, gettext-devel
 BuildRequires:  fcitx5-devel, pkgconf, librime-devel
 BuildRequires:  brise 
 Requires:       fcitx5

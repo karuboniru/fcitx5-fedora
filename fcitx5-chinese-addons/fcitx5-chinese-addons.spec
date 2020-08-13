@@ -15,7 +15,7 @@ Source2:        https://download.fcitx-im.org/data/py_stroke-%{dictver}.tar.gz
 
 
 BuildRequires:  cmake, extra-cmake-modules
-BuildRequires:  gcc-c++, make
+BuildRequires:  gcc-c++
 BuildRequires:  ninja-build, boost-devel, fcitx5-devel
 BuildRequires:  curl-devel, fmt-devel, gettext-devel
 BuildRequires:  fcitx5-qt-devel, qt5-qtwebkit-devel

@@ -12,7 +12,7 @@ Source:         %{forgesource}
 
 
 BuildRequires:  cmake, extra-cmake-modules
-BuildRequires:  gcc-c++, make, lua-devel
+BuildRequires:  gcc-c++, lua-devel
 BuildRequires:  ninja-build, fcitx5-devel
 BuildRequires:  gettext-devel
 Requires:       fcitx5

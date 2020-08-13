@@ -14,7 +14,7 @@ Patch0:         0001-use-usr-libexec-instead.patch
 
 
 BuildRequires:  cmake, extra-cmake-modules
-BuildRequires:  gcc-c++, make, libxkbcommon-x11-devel
+BuildRequires:  gcc-c++, libxkbcommon-x11-devel
 BuildRequires:  ninja-build, fcitx5-devel, fcitx5-qt-devel
 BuildRequires:  xkeyboard-config-devel, libX11-devel
 BuildRequires:  gettext-devel, pkgconf, iso-codes-devel

@@ -21,7 +21,7 @@ Source2:    https://download.fcitx-im.org/data/lm_sc.3gm.arpa-%{_lm_sc_ver}.tar.
 Source3:    https://download.fcitx-im.org/data/dict.utf8-%{_dict_ver}.tar.xz
 Source4:    https://download.fcitx-im.org/data/table.tar.gz
 
-BuildRequires: cmake, make, ninja-build, gcc-c++
+BuildRequires: cmake, ninja-build, gcc-c++
 BuildRequires: fcitx5-devel, boost-devel, extra-cmake-modules
 BuildRequires: python3, doxygen, zlib-devel, bzip2-devel
 BuildRequires: xz-devel, eigen3-devel
