@@ -14,3 +14,8 @@ then
 else
     QT_IM_MODULE=xim
 fi
+
+# workaround for gnome users
+if [ "$XDG_SESSION_DESKTOP"="gnome"  ]; then
+    /usr/bin/systemd-run --user --unit=$XIM $XIM_PROGRAM $XIM_ARGS
+fi
