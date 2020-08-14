@@ -9,6 +9,7 @@ Summary:        Qt library and IM module for fcitx5
 License:        LGPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
+# upstream don't use /usr/libexec, patch to fix
 Patch0:         0001-use-usr-libexec-instead.patch
 
 

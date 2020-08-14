@@ -10,6 +10,7 @@ Summary:        Configuration tools used by fcitx5
 License:        GPLv2+
 URL:            %{forgeurl}
 Source:         %{forgesource}
+# upstream don't use /usr/libexec, patch to fix
 Patch0:         0001-use-usr-libexec-instead.patch
 
 
