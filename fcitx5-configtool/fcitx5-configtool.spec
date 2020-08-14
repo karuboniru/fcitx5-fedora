@@ -32,7 +32,7 @@ Configuration tools used by fcitx5.
 %forgeautosetup -p1
 
 %build
-%cmake -GNinja -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%cmake_kf5 -GNinja -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
 %cmake_build 
 
 %install
