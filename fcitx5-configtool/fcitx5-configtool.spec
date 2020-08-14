@@ -46,11 +46,11 @@ Configuration tools used by fcitx5.
 %license LICENSES/GPL-2.0-or-later.txt
 %doc README
 %{_bindir}/*
-%{_libdir}/qt5/plugins/kcms/kcm_fcitx5.so
+%{_kf5_qtplugindir}/kcms/kcm_fcitx5.so
 %{_datadir}/applications/kbd-layout-viewer5.desktop
 %{_datadir}/kpackage/kcms/org.fcitx.fcitx5.kcm
 %{_datadir}/kservices5/kcm_fcitx5.desktop
-%{_datadir}/metainfo/org.fcitx.fcitx5.kcm.appdata.xml
+%{_metainfodir}/org.fcitx.fcitx5.kcm.appdata.xml
 
 %changelog
 * Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitecd16e5

@@ -46,7 +46,7 @@ Devel files for fcitx5-qt
 %doc README.md 
 %{_libdir}/*.so.*
 %{_libdir}/fcitx5/*
-%{_libdir}/qt5/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
+%{_qt5_plugindir}/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 %{_libexecdir}/fcitx5
 
 %files devel
