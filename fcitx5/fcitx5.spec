@@ -3,10 +3,11 @@
 %forgemeta
 %global dictver 20121020
 %global _xinputconf %{_sysconfdir}/X11/xinit/xinput.d/fcitx5.conf
+%global __provides_exclude_from ^%{_libdir}/%{name}/.*\\.so$
 
 Name:           fcitx5
 Version:        0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Next generation of fcitx
 License:        LGPLv2+
 URL:            %{forgeurl}
@@ -15,20 +16,37 @@ Source1:        https://download.fcitx-im.org/data/en_dict-%{dictver}.tar.gz
 Source2:        fcitx5-xinput
 
 
-BuildRequires:  cmake, extra-cmake-modules
+BuildRequires:  cmake
+BuildRequires:  extra-cmake-modules
 BuildRequires:  gcc-c++
-BuildRequires:  cairo-devel, enchant-devel, iso-codes-devel
-BuildRequires:  mesa-libGL-devel, libxkbcommon-x11-devel
-BuildRequires:  pango-devel, systemd-devel, systemd-rpm-macros
-BuildRequires:  wayland-devel, wayland-protocols-devel, libxcb-devel
-BuildRequires:  xcb-util-wm-devel, xcb-imdkit-devel, xcb-util-wm-devel
-BuildRequires:  libxkbfile-devel, fmt-devel, gdk-pixbuf2-devel
-BuildRequires:  cldr-emoji-annotation-devel, libuuid-devel
-BuildRequires:  expat-devel, json-c-devel, xkeyboard-config-devel
-BuildRequires:  xcb-util-keysyms-devel
+BuildRequires:  systemd-rpm-macros
+BuildRequires:  pkgconfig(cairo)
+BuildRequires:  pkgconfig(cldr-emoji-annotation)
+BuildRequires:  pkgconfig(dri)
+BuildRequires:  pkgconfig(enchant)
+BuildRequires:  pkgconfig(expat)
+BuildRequires:  pkgconfig(fmt)
+BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:  pkgconfig(iso-codes)
+BuildRequires:  pkgconfig(json-c)
+BuildRequires:  pkgconfig(pango)
+BuildRequires:  pkgconfig(uuid)
+BuildRequires:  pkgconfig(libsystemd)
+BuildRequires:  pkgconfig(wayland-egl)
+BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  pkgconfig(wayland-protocols)
+BuildRequires:  pkgconfig(xcb)
+BuildRequires:  pkgconfig(xkbcommon-x11)
+BuildRequires:  pkgconfig(xkbfile)
+BuildRequires:  pkgconfig(xcb-ewmh)
+BuildRequires:  pkgconfig(xcb-imdkit)
+BuildRequires:  pkgconfig(xcb-icccm)
+BuildRequires:  pkgconfig(xcb-keysyms)
+BuildRequires:  pkgconfig(xkeyboard-config)
 Requires:       dbus-x11
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       imsettings
+Requires:       hicolor-icon-theme
 Requires(post):     %{_sbindir}/alternatives
 Requires(postun):   %{_sbindir}/alternatives
 
@@ -59,6 +77,13 @@ cp %{S:1} src/modules/spell/dict/
 %install
 %cmake_install
 install -pm 644 -D %{S:2} %{buildroot}%{_xinputconf}
+desktop-file-install --delete-original \
+  --dir %{buildroot}%{_datadir}/applications \
+  %{buildroot}%{_datadir}/applications/%{name}-configtool.desktop
+ 
+desktop-file-install --delete-original \
+  --dir %{buildroot}%{_datadir}/applications \
+  %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %find_lang %{name}
 
@@ -80,7 +105,9 @@ fi
 %files -f %{name}.lang
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
-%{_bindir}/*
+%{_bindir}/fcitx5
+%{_bindir}/fcitx5-configtool
+%{_bindir}/fcitx5-remote
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}-configtool.desktop
 %{_datadir}/%{name}
@@ -88,19 +115,23 @@ fi
 %{_xinputconf}
 
 %files devel
-%{_includedir}/*
-%{_libdir}/cmake/*
-%{_libdir}/*.so
-%{_libdir}/pkgconfig/*
+%{_includedir}/Fcitx5/
+%{_libdir}/cmake/Fcitx5*
+%{_libdir}/libFcitx5*.so
+%{_libdir}/pkgconfig/Fcitx5*.pc
 
 %files libs
-%{_libdir}/%{name}
-%{_libdir}/*.so.*
+%license LICENSES/LGPL-2.1-or-later.txt
+%{_libdir}/%{name}/ # that way your package owns the entire dir
+%{_libdir}/libFcitx5*.so.*
 
 
 %changelog
+* Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2
+- change according to review suggestions
+
 * Thu Aug 13 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200813git87fb655
 - new version
 
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitc87ea48
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200811gitc87ea48
 - initial package

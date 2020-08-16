@@ -4,15 +4,19 @@
 
 Name:       xcb-imdkit
 Version:    0
-Release:    0.1%{?dist}
+Release:    0.2%{?dist}
 Summary:    Input method development support for xcb
-License:    LGPLv2
+# source files in src/xlibi18n use the "old style" MIT license known as NTP.
+License:    LGPLv2 and MIT
 URL:        %{forgeurl}
 Source:     %{forgesource}
 
-BuildRequires:  cmake, extra-cmake-modules
+BuildRequires:  cmake,
+BuildRequires:  extra-cmake-modules
 BuildRequires:  gcc-c++
-BuildRequires:  libxcb-devel, xcb-util-devel, xcb-util-keysyms-devel
+BuildRequires:  pkgconfig(xcb)
+BuildRequires:  pkgconfig(xcb-keysyms)
+BuildRequires:  pkgconfig(xcb-util)
 
 %description
 xcb-imdkit is an implementation of xim protocol in xcb, 
@@ -30,7 +34,6 @@ Devel files for xcb-imdkit
 %prep
 %forgesetup
 
-
 %build
 %cmake
 %cmake_build
@@ -44,15 +47,18 @@ Devel files for xcb-imdkit
 %files
 %license LICENSES/LGPL-2.1-only.txt
 %doc README.md
-%{_libdir}/*.so.*
+%{_libdir}/lib%{name}.so.0.*
 
 %files devel
-%{_includedir}/xcb-imdkit
-%{_libdir}/cmake/XCBImdkit
-%{_libdir}/*.so
+%{_includedir}/xcb-imdkit/
+%{_libdir}/cmake/XCBImdkit/
+%{_libdir}/lib%{name}.so
 %{_libdir}/pkgconfig/xcb-imdkit.pc
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitd6609a7
+* Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200811gitd6609a7
+- Change according to review 
+
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200811gitd6609a7
 - initial package
 
