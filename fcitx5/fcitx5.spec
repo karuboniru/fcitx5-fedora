@@ -55,11 +55,11 @@ Requires(postun):   %{_sbindir}/alternatives
 Fcitx 5 is a generic input method framework released under LGPL-2.1+.
 
 %package data
-Summary:    Data files of Fcitx5
-BuildArch:  noarch
-Requires:   %{name}%{?_isa} = %{version}-%{release}
-Requires:   hicolor-icon-theme
-Requires:   dbus
+Summary:        Data files of Fcitx5
+BuildArch:      noarch
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       hicolor-icon-theme
+Requires:       dbus
 
 %description data
 The %{name}-data package provides shared data for Fcitx5.
@@ -117,10 +117,10 @@ fi
 %files -f %{name}.lang
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
+%config %{_xinputconf}
 %{_bindir}/%{name}
 %{_bindir}/%{name}-configtool
 %{_bindir}/%{name}-remote
-%{_xinputconf}
 
 %files devel
 %{_includedir}/Fcitx5/

@@ -10,9 +10,15 @@ License:    GPLv2+
 URL:        %{forgeurl}
 Source:     %{forgesource}
 
-BuildRequires:  gcc-c++, ninja-build, extra-cmake-modules
-BuildRequires:  cmake, fcitx5-devel, gettext, intltool, libchewing-devel
-Requires:       fcitx5, fcitx5-libs
+BuildRequires:  cmake
+BuildRequires:  extra-cmake-modules
+BuildRequires:  gcc-c++
+BuildRequires:  intltool
+BuildRequires:  ninja-build
+BuildRequires:  pkgconfig(Fcitx5Core)
+BuildRequires:  pkgconfig(chewing)
+BuildRequires:  gettext
+Requires:       fcitx5
 
 %description
 fcitx5-chewing is a Chewing Wrapper for Fcitx.

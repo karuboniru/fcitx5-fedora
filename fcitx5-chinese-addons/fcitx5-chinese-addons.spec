@@ -2,10 +2,11 @@
 %global commit   ef9beb76e563cae1da7eb9cdea4ce0d916e2e700
 %forgemeta
 %global dictver 20121124
+%global __provides_exclude_from ^%{_libdir}/fcitx5/.*\\.so$
 
 Name:           fcitx5-chinese-addons
 Version:        0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Chinese related addon for fcitx5
 License:        LGPLv2+
 URL:            %{forgeurl}
@@ -14,14 +15,28 @@ Source1:        https://download.fcitx-im.org/data/py_table-%{dictver}.tar.gz
 Source2:        https://download.fcitx-im.org/data/py_stroke-%{dictver}.tar.gz
 
 
-BuildRequires:  cmake, extra-cmake-modules
+BuildRequires:  boost-devel
+BuildRequires:  cmake
+BuildRequires:  curl-devel
+BuildRequires:  extra-cmake-modules
+BuildRequires:  fcitx5-qt-devel
+BuildRequires:  fcitx5-lua-devel
 BuildRequires:  gcc-c++
-BuildRequires:  ninja-build, boost-devel, fcitx5-devel
-BuildRequires:  curl-devel, fmt-devel, gettext-devel
-BuildRequires:  fcitx5-qt-devel, qt5-qtwebkit-devel
-BuildRequires:  qt5-qtwebengine-devel, libime-devel
-BuildRequires:  opencc-devel, fcitx5-lua-devel
+BuildRequires:  libime-devel
+BuildRequires:  ninja-build
+BuildRequires:  gettext-devel
+BuildRequires:  pkgconfig(fmt)
+BuildRequires:  pkgconfig(Qt5WebKit)
+BuildRequires:  pkgconfig(Qt5WebKitWidgets)
+BuildRequires:  pkgconfig(Qt5WebEngine)
+BuildRequires:  pkgconfig(Qt5WebEngineCore)
+BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
+BuildRequires:  pkgconfig(opencc)
+BuildRequires:  pkgconfig(Fcitx5Core)
+BuildRequires:  pkgconfig(Fcitx5Module)
 Requires:       fcitx5
+Requires:       fcitx5-qt
+Requires:       hicolor-icon-theme
 
 %description
 This provides pinyin and table input method
@@ -58,16 +73,20 @@ ln -s %{S:2} modules/pinyinhelper
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
 %{_bindir}/scel2org5
-%{_libdir}/fcitx5/*
+%{_libdir}/fcitx5/*.so
+%{_libdir}/fcitx5/qt5/libpinyindictmanager.so
 %{_datadir}/fcitx5/*
 %{_datadir}/icons/hicolor/*/apps/*
 
 
 %files devel
-%{_includedir}/Fcitx5/*
-%{_libdir}/cmake/*
+%{_includedir}/Fcitx5/Module/fcitx-module/*
+%{_libdir}/cmake/Fcitx5Module*
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitef9beb7
+* Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200811gitef9beb7
+- rebuilt
+
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200811gitef9beb7
 - initial package
 
