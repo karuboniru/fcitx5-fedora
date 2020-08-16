@@ -1,10 +1,12 @@
 %global forgeurl https://github.com/fcitx/fcitx5-lua
 %global commit   d705404964d4842998be17cd53dd29d2f78a4144
 %forgemeta
+%global __provides_exclude_from ^%{_libdir}/fcitx5/.*\\.so$
+
 
 Name:           fcitx5-lua
 Version:        0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Lua support for fcitx
 License:        LGPLv2+
 URL:            %{forgeurl}
@@ -54,5 +56,8 @@ Devel files for fcitx5-lua
 
 
 %changelog
-* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200812gitd705404
+* Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200811gitd705404
+- rebuilt
+
+* Wed Aug 12 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200811gitd705404
 - initial package

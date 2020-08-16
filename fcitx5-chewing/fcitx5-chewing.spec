@@ -1,10 +1,11 @@
 %global forgeurl https://github.com/fcitx/fcitx5-chewing
 %global commit   7f7ea5e8229de495be2168ef571615f012730ff0
 %forgemeta
+%global __provides_exclude_from ^%{_libdir}/fcitx5/.*\\.so$
 
 Name:       fcitx5-chewing
 Version:    0
-Release:    0.1%{?dist}
+Release:    0.2%{?dist}
 Summary:    Chewing Wrapper for Fcitx
 License:    GPLv2+
 URL:        %{forgeurl}
@@ -19,6 +20,7 @@ BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(chewing)
 BuildRequires:  gettext
 Requires:       fcitx5
+Requires:       hicolor-icon-theme
 
 %description
 fcitx5-chewing is a Chewing Wrapper for Fcitx.
@@ -48,5 +50,8 @@ Phonetic IME.
 %{_datadir}/icons/hicolor/48x48/apps/fcitx-chewing.png
 
 %changelog
-* Thu Aug 13 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1
+* Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200813git7f7ea5e
+- rebuilt
+
+* Thu Aug 13 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.1.20200813git7f7ea5e
 - Initial Package
