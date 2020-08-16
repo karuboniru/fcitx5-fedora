@@ -124,8 +124,10 @@ fi
 %files libs
 %license LICENSES/LGPL-2.1-or-later.txt
 %{_libdir}/%{name}/
-%{_libdir}/libFcitx5*.so.*
-
+%{_libdir}/libFcitx5*.so.*.*
+%{_libdir}/libFcitx5Config.so.6
+%{_libdir}/libFcitx5Core.so.6
+%{_libdir}/libFcitx5Utils.so.2
 
 %changelog
 * Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200813git87fb655
