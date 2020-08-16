@@ -54,9 +54,8 @@ Configuration tools used by fcitx5.
 
 %install
 %cmake_install
-desktop-file-install --delete-original \
-  --dir %{buildroot}%{_datadir}/kservices5 \
-  %{buildroot}%{_datadir}/kservices5/kcm_fcitx5.desktop
+# kservices5/*.desktop desktop file dont't need to use desktop-file-install
+# only for applications/*.desktop
 desktop-file-install --delete-original \
   --dir %{buildroot}%{_datadir}/applications \
   %{buildroot}%{_datadir}/applications/kbd-layout-viewer5.desktop

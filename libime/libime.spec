@@ -75,9 +75,9 @@ ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
 %{_bindir}/libime_prediction
 %{_bindir}/libime_slm_build_binary
 %{_bindir}/libime_tabledict
-%{_libdir}/libIMECore.so.0.*
-%{_libdir}/libIMEPinyin.so.0.*
-%{_libdir}/libIMETable.so.0.*
+%{_libdir}/libIMECore.so.0*
+%{_libdir}/libIMEPinyin.so.0*
+%{_libdir}/libIMETable.so.0*
 %{_datadir}/libime
 
 
