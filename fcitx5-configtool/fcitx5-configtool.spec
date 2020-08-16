@@ -15,6 +15,7 @@ Patch0:         0001-use-usr-libexec-instead.patch
 
 
 BuildRequires:  cmake
+BuildRequires:  desktop-file-utils
 BuildRequires:  extra-cmake-modules
 BuildRequires:  gcc-c++
 BuildRequires:  ninja-build
