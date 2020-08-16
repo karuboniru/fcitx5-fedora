@@ -47,7 +47,7 @@ Devel files for xcb-imdkit
 %files
 %license LICENSES/LGPL-2.1-only.txt
 %doc README.md
-%{_libdir}/lib%{name}.so.0.*
+%{_libdir}/lib%{name}.so.0*
 
 %files devel
 %{_includedir}/xcb-imdkit/

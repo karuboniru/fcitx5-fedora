@@ -17,6 +17,7 @@ Source2:        fcitx5-xinput
 
 
 BuildRequires:  cmake
+BuildRequires:  desktop-file-utils
 BuildRequires:  extra-cmake-modules
 BuildRequires:  gcc-c++
 BuildRequires:  systemd-rpm-macros
@@ -105,9 +106,9 @@ fi
 %files -f %{name}.lang
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
-%{_bindir}/fcitx5
-%{_bindir}/fcitx5-configtool
-%{_bindir}/fcitx5-remote
+%{_bindir}/%{name}
+%{_bindir}/%{name}-configtool
+%{_bindir}/%{name}-remote
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}-configtool.desktop
 %{_datadir}/%{name}
@@ -122,7 +123,7 @@ fi
 
 %files libs
 %license LICENSES/LGPL-2.1-or-later.txt
-%{_libdir}/%{name}/ # that way your package owns the entire dir
+%{_libdir}/%{name}/
 %{_libdir}/libFcitx5*.so.*
 
 
