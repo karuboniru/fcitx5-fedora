@@ -46,26 +46,37 @@ BuildRequires:  pkgconfig(xcb-keysyms)
 BuildRequires:  pkgconfig(xkeyboard-config)
 Requires:       dbus-x11
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
+Requires:       %{name}-data = %{version}-%{release}
 Requires:       imsettings
-Requires:       hicolor-icon-theme
 Requires(post):     %{_sbindir}/alternatives
 Requires(postun):   %{_sbindir}/alternatives
 
 %description
 Fcitx 5 is a generic input method framework released under LGPL-2.1+.
 
+%package data
+Summary:    Data files of Fcitx5
+BuildArch:  noarch
+Requires:   %{name}%{?_isa} = %{version}-%{release}
+Requires:   hicolor-icon-theme
+Requires:   dbus
+
+%description data
+The %{name}-data package provides shared data for Fcitx5.
+
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-Devel files for fcitx5
+The %{name}-devel package contains libraries and header files necessary for
+developing programs using Fcitx5 libraries.
 
 %package libs
 Summary:        Shared libraries for Fcitx
 
 %description libs
-The %{name}-libs package provides shared libraries for Fcitx
+The %{name}-libs package provides shared libraries for Fcitx5
 
 %prep
 %forgesetup
@@ -109,10 +120,6 @@ fi
 %{_bindir}/%{name}
 %{_bindir}/%{name}-configtool
 %{_bindir}/%{name}-remote
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/applications/%{name}-configtool.desktop
-%{_datadir}/%{name}
-%{_datadir}/icons/hicolor/*/apps/*
 %{_xinputconf}
 
 %files devel
@@ -128,6 +135,12 @@ fi
 %{_libdir}/libFcitx5Config.so.6
 %{_libdir}/libFcitx5Core.so.6
 %{_libdir}/libFcitx5Utils.so.2
+
+%files data
+%{_datadir}/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-configtool.desktop
+%{_datadir}/icons/hicolor/*/apps/*
 
 %changelog
 * Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200813git87fb655
