@@ -63,7 +63,7 @@ Devel files for fcitx5-qt
 %{_libexecdir}/fcitx5/
 
 %files devel
-%{_includedir}/Fcitx5Qt5/*
+%{_includedir}/Fcitx5Qt5/
 %{_libdir}/cmake/Fcitx5Qt5*
 %{_libdir}/libFcitx5Qt5DBusAddons.so
 %{_libdir}/libFcitx5Qt5WidgetsAddons.so
