@@ -130,7 +130,6 @@ fi
 %{_libdir}/pkgconfig/Fcitx5*.pc
 
 %files libs
-%license LICENSES/LGPL-2.1-or-later.txt
 %{_libdir}/%{name}/
 %{_libdir}/libFcitx5*.so.*.*
 %{_libdir}/libFcitx5Config.so.6
