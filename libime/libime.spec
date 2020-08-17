@@ -13,7 +13,7 @@
 Name:       libime  
 Version:    0
 # both kenlm and libime are released under LGPL2+
-License:    LGPLv2+
+License:    LGPLv2+ and MIT and BSD
 Release:    0.2%{?dist}
 Summary:    This is a library to support generic input method implementation
 URL:        %{forgeurl0}

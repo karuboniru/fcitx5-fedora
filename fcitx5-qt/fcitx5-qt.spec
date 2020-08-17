@@ -26,7 +26,6 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui) 
 BuildRequires:  gettext-devel
 BuildRequires:  qt5-qtbase-private-devel
-Requires:       fcitx5
 
 %description
 Qt library and IM module for fcitx5.
@@ -34,6 +33,7 @@ Qt library and IM module for fcitx5.
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       fcitx5-devel
 
 %description devel
 Devel files for fcitx5-qt

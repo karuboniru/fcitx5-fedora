@@ -74,6 +74,7 @@ developing programs using Fcitx5 libraries.
 
 %package libs
 Summary:        Shared libraries for Fcitx
+Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description libs
 The %{name}-libs package provides shared libraries for Fcitx5
@@ -117,7 +118,7 @@ fi
 %files -f %{name}.lang
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
-%config %{_xinputconf}
+%config(noreplace) %{_xinputconf}
 %{_bindir}/%{name}
 %{_bindir}/%{name}-configtool
 %{_bindir}/%{name}-remote

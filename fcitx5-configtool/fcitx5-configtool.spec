@@ -38,7 +38,6 @@ BuildRequires:  pkgconfig(x11-xcb)
 BuildRequires:  pkgconfig(xkeyboard-config)
 BuildRequires:  pkgconfig(xkbcommon-x11)
 BuildRequires:  pkgconfig(xkbfile)
-Requires:       fcitx5
 Requires:       kf5-filesystem
 
 

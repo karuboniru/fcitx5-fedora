@@ -24,7 +24,6 @@ BuildRequires:  pkgconfig(Qt5)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  gettext
 BuildRequires:  intltool
-Requires:       fcitx5
 Requires:       skkdic
 Requires:       hicolor-icon-theme
 

@@ -17,7 +17,6 @@ BuildRequires:  cmake, extra-cmake-modules
 BuildRequires:  gcc-c++, lua-devel
 BuildRequires:  ninja-build, fcitx5-devel
 BuildRequires:  gettext-devel
-Requires:       fcitx5
 
 %description
 Lua support for fcitx.
@@ -25,6 +24,7 @@ Lua support for fcitx.
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       fcitx5-devel
 
 %description devel
 Devel files for fcitx5-lua

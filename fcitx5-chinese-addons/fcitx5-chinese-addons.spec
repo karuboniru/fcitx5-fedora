@@ -34,8 +34,6 @@ BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(opencc)
 BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(Fcitx5Module)
-Requires:       fcitx5
-Requires:       fcitx5-qt
 Requires:       hicolor-icon-theme
 
 %description
@@ -48,6 +46,7 @@ CLDR with modification.
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       fcitx5-devel
 
 %description devel
 devel files for fcitx5-chinese-addons

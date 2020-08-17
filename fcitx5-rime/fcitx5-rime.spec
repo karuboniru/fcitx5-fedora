@@ -23,7 +23,6 @@ BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(Fcitx5Module)
 BuildRequires:  pkgconfig(rime)
-Requires:       fcitx5
 Requires:       hicolor-icon-theme
 
 %description

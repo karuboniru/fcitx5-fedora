@@ -22,9 +22,6 @@ BuildRequires:  pkgconfig(glib-2.0) >= 2.38
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(gtk+-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
-Requires:       fcitx5
-Requires:       gtk2
-Requires:       gtk3
 
 %description
 Gtk im module and glib based dbus client library.
@@ -32,9 +29,10 @@ Gtk im module and glib based dbus client library.
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       fcitx5-devel
 
 %description devel
-Devel files for fcitx5-gtk.
+DeDevelopment files for fcitx5-gtk.
 
 %prep
 %forgesetup
@@ -58,7 +56,7 @@ Devel files for fcitx5-gtk.
 %{_libdir}/cmake/Fcitx5GClient
 %{_libdir}/libFcitx5GClient.so
 %{_libdir}/pkgconfig/Fcitx5GClient.pc
-%{_datadir}/gir-1.0/FcitxG-1.0.gir
+%{_datadir}/gir-1.0/
 
 
 %changelog

@@ -19,7 +19,6 @@ BuildRequires:  ninja-build
 BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(chewing)
 BuildRequires:  gettext
-Requires:       fcitx5
 Requires:       hicolor-icon-theme
 
 %description
