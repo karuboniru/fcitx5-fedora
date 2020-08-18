@@ -29,10 +29,10 @@ Gtk im module and glib based dbus client library.
 %package devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       fcitx5-devel
+Requires:       fcitx5-devel%{?_isa}
 
 %description devel
-DeDevelopment files for fcitx5-gtk.
+Development files for fcitx5-gtk.
 
 %prep
 %forgesetup
