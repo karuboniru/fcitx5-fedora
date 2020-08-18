@@ -45,7 +45,6 @@ BuildRequires:  pkgconfig(xcb-icccm)
 BuildRequires:  pkgconfig(xcb-keysyms)
 BuildRequires:  pkgconfig(xkeyboard-config)
 Requires:       dbus-x11
-Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       %{name}-data = %{version}-%{release}
 Requires:       imsettings
 Requires(post):     %{_sbindir}/alternatives
@@ -71,12 +70,6 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 %description devel
 The %{name}-devel package contains libraries and header files necessary for
 developing programs using Fcitx5 libraries.
-
-%package libs
-Summary:        Shared libraries for Fcitx
-
-%description libs
-The %{name}-libs package provides shared libraries for Fcitx5
 
 %prep
 %forgesetup
@@ -112,8 +105,6 @@ if [ "$1" = "0" ]; then
   [ -L %{_sysconfdir}/alternatives/xinputrc -a "`readlink %{_sysconfdir}/alternatives/xinputrc`" = "%{_xinputconf}" ] && %{_sbindir}/alternatives --auto xinputrc || :
 fi
 
-%ldconfig_scriptlets libs
-
 %files -f %{name}.lang
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
@@ -121,6 +112,11 @@ fi
 %{_bindir}/%{name}
 %{_bindir}/%{name}-configtool
 %{_bindir}/%{name}-remote
+%{_libdir}/%{name}/
+%{_libdir}/libFcitx5*.so.*.*
+%{_libdir}/libFcitx5Config.so.6
+%{_libdir}/libFcitx5Core.so.6
+%{_libdir}/libFcitx5Utils.so.2
 
 %files devel
 %{_includedir}/Fcitx5/
@@ -128,13 +124,6 @@ fi
 %{_libdir}/libFcitx5*.so
 %{_libdir}/pkgconfig/Fcitx5*.pc
 
-%files libs
-%license LICENSES/LGPL-2.1-or-later.txt
-%{_libdir}/%{name}/
-%{_libdir}/libFcitx5*.so.*.*
-%{_libdir}/libFcitx5Config.so.6
-%{_libdir}/libFcitx5Core.so.6
-%{_libdir}/libFcitx5Utils.so.2
 
 %files data
 %{_datadir}/%{name}
