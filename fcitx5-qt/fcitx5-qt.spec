@@ -27,8 +27,8 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui) 
 BuildRequires:  gettext-devel
 BuildRequires:  qt5-qtbase-private-devel
-# to own /usr/lib64/fcitx5
-Requires:       fcitx5-libs
+
+Requires:       fcitx5
 
 %description
 Qt library and IM module for fcitx5.
