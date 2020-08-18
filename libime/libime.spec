@@ -12,7 +12,8 @@
 
 Name:       libime  
 Version:    0
-# both kenlm and libime are released under LGPL2+
+# both kenlm and libime are released under LGPL2+, but kenlm have some 
+# files in MIT and BSD
 License:    LGPLv2+ and MIT and BSD
 Release:    0.2%{?dist}
 Summary:    This is a library to support generic input method implementation
@@ -36,9 +37,21 @@ BuildRequires: pkgconfig(bzip2)
 BuildRequires: pkgconfig(liblzma)
 BuildRequires: pkgconfig(eigen3)
 
+Requires:      %{name}-data = %{version}-%{release}
+
 
 %description
 This is a library to support generic input method implementation.
+
+%package data
+Summary:        Data files of %{name}
+BuildArch:      noarch
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       hicolor-icon-theme
+Requires:       dbus
+
+%description data
+The %{name}-data package provides shared data for %{name}.
 
 %package devel
 Summary:        Development files for %{name}
@@ -49,10 +62,10 @@ Development files for %{name}
 
 %prep
 %forgeautosetup
-rmdir %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm
-tar xf %{S:1} --directory=%{_builddir}/%{name}-%{commit0}/src/libime/core/
-ln -s %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm-%{commit1} \
-    %{_builddir}/%{name}-%{commit0}/src/libime/core/kenlm
+rmdir %{_builddir}/%{name}-%{commit0}/src/%{name}/core/kenlm
+tar xf %{S:1} --directory=%{_builddir}/%{name}-%{commit0}/src/%{name}/core/
+ln -s %{_builddir}/%{name}-%{commit0}/src/%{name}/core/kenlm-%{commit1} \
+    %{_builddir}/%{name}-%{commit0}/src/%{name}/core/kenlm
 ln -s %{S:2} %{_builddir}/%{name}-%{commit0}/data
 ln -s %{S:3} %{_builddir}/%{name}-%{commit0}/data
 ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
@@ -68,18 +81,19 @@ ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
 %ctest
 
 %files
-%license LICENSES/LGPL-2.1-or-later.txt
+%license LICENSES/LGPL-2.1-or-later.txt src/%{name}/core/kenlm-%{commit1}/LICENSE
 %doc README.md 
-%{_bindir}/libime_history
-%{_bindir}/libime_pinyindict
-%{_bindir}/libime_prediction
-%{_bindir}/libime_slm_build_binary
-%{_bindir}/libime_tabledict
+%{_bindir}/%{name}_history
+%{_bindir}/%{name}_pinyindict
+%{_bindir}/%{name}_prediction
+%{_bindir}/%{name}_slm_build_binary
+%{_bindir}/%{name}_tabledict
 %{_libdir}/libIMECore.so.0*
 %{_libdir}/libIMEPinyin.so.0*
 %{_libdir}/libIMETable.so.0*
-%{_datadir}/libime
 
+%files data
+%{_datadir}/%{name}/
 
 %files devel
 %{_libdir}/libIMECore.so
