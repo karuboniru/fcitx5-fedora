@@ -8,7 +8,8 @@ Name:           fcitx5-qt
 Version:        0
 Release:        0.2%{?dist}
 Summary:        Qt library and IM module for fcitx5
-License:        LGPLv2+
+# Fcitx5Qt{4,5}DBusAddons Library and Input context plugin are released under BSD.
+License:        LGPLv2+ and BSD
 URL:            %{forgeurl}
 Source:         %{forgesource}
 # upstream don't use /usr/libexec, patch to fix
@@ -26,6 +27,8 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui) 
 BuildRequires:  gettext-devel
 BuildRequires:  qt5-qtbase-private-devel
+# to own /usr/lib64/fcitx5
+Requires:       fcitx5-libs
 
 %description
 Qt library and IM module for fcitx5.
@@ -36,7 +39,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       fcitx5-devel
 
 %description devel
-Devel files for fcitx5-qt
+Development files for %{name}
 
 %prep
 %forgeautosetup -p1
@@ -58,7 +61,7 @@ Devel files for fcitx5-qt
 %{_libdir}/libFcitx5Qt5WidgetsAddons.so.2
 %{_libdir}/libFcitx5Qt5DBusAddons.so.*.*
 %{_libdir}/libFcitx5Qt5WidgetsAddons.so.*.*
-%{_libdir}/fcitx5/qt5/libfcitx-quickphrase-editor5.so
+%{_libdir}/fcitx5/qt5/
 %{_qt5_plugindir}/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 %{_libexecdir}/fcitx5/
 
