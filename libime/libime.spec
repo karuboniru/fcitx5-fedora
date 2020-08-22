@@ -1,5 +1,5 @@
 %global forgeurl0 https://github.com/fcitx/libime
-%global commit0   a108d15b06f0885f2fcc95d035614665392bc83b
+%global commit0   dff3ea6d1600166a5da65e4e7bee72fa8d595daa
 
 # KenLM is used as submodule in upstream
 %global forgeurl1 https://github.com/kpu/kenlm
@@ -15,7 +15,7 @@ Version:    0
 # both kenlm and libime are released under LGPL2+, but kenlm have some 
 # files in MIT and BSD
 License:    LGPLv2+ and MIT and BSD
-Release:    0.2%{?dist}
+Release:    0.3%{?dist}
 Summary:    This is a library to support generic input method implementation
 URL:        %{forgeurl0}
 Source0:    %{forgesource0}
@@ -24,11 +24,6 @@ Source2:    https://download.fcitx-im.org/data/lm_sc.3gm.arpa-%{_lm_sc_ver}.tar.
 Source3:    https://download.fcitx-im.org/data/dict.utf8-%{_dict_ver}.tar.xz
 Source4:    https://download.fcitx-im.org/data/table.tar.gz
 
-# Test failure, for more information
-# - https://github.com/fcitx/libime/issues/4
-# - https://yanqiyu.fedorapeople.org/libime/build.log
-# - https://bugzilla.redhat.com/show_bug.cgi?id=1868849
-ExcludeArch:   i686
 
 BuildRequires: cmake
 BuildRequires: ninja-build
@@ -52,7 +47,7 @@ This is a library to support generic input method implementation.
 %package data
 Summary:        Data files of %{name}
 BuildArch:      noarch
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Requires:       hicolor-icon-theme
 Requires:       dbus
 
@@ -111,6 +106,10 @@ ln -s %{S:4} %{_builddir}/%{name}-%{commit0}/data
 
 
 %changelog
+* Sat Aug 22 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.3.20200822gitdff3ea6.s20200822git96d303c
+- upstream fix of testing on i686
+- commit dff3ea6d1600166a5da65e4e7bee72fa8d595daa
+
 * Sun Aug 16 2020 Qiyu Yan <yanqiyu@fedoraproject.org> - 0-0.2.20200811gita108d15.s20200811git96d303c
 - rebuilt
 
