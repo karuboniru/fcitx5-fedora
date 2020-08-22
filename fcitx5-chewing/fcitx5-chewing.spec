@@ -20,6 +20,7 @@ BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(chewing)
 BuildRequires:  gettext
 Requires:       hicolor-icon-theme
+Requires:       fcitx5-data
 
 %description
 fcitx5-chewing is a Chewing Wrapper for Fcitx.

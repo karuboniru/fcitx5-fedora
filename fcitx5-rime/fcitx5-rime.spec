@@ -24,6 +24,7 @@ BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(Fcitx5Module)
 BuildRequires:  pkgconfig(rime)
 Requires:       hicolor-icon-theme
+Requires:       fcitx5-data
 
 %description
 RIME(中州韻輸入法引擎) is mainly a Traditional Chinese 

@@ -26,6 +26,7 @@ BuildRequires:  gettext
 BuildRequires:  intltool
 Requires:       skkdic
 Requires:       hicolor-icon-theme
+Requires:       fcitx5-data
 
 %description
 Fcitx5-skk is an SKK (Simple Kana Kanji) engine for Fcitx.  It provides
