@@ -87,7 +87,13 @@ ln -s %{S:2} modules/pinyinhelper
 %files data
 %dir %{_datadir}/fcitx5/pinyin
 %dir %{_datadir}/fcitx5/punctuation
-%{_datadir}/fcitx5/*/*
+%dir %{_datadir}/fcitx5/pinyinhelper
+%{_datadir}/fcitx5/addon/*.conf
+%{_datadir}/fcitx5/data/gbks2t.tab
+%{_datadir}/fcitx5/lua/imeapi/extensions/pinyin.lua
+%{_datadir}/fcitx5/pinyin/*.dict
+%{_datadir}/fcitx5/pinyinhelper/py_*.mb
+%{_datadir}/fcitx5/punctuation/punc.mb.*
 %{_datadir}/icons/hicolor/*/apps/*
 
 %files devel
