@@ -13,10 +13,14 @@ URL:            %{forgeurl}
 Source:         %{forgesource}
 
 
-BuildRequires:  cmake, extra-cmake-modules
-BuildRequires:  gcc-c++, lua-devel
-BuildRequires:  ninja-build, fcitx5-devel
-BuildRequires:  gettext-devel
+BuildRequires:  cmake
+BuildRequires:  extra-cmake-modules
+BuildRequires:  gcc-c++
+BuildRequires:  gettext
+BuildRequires:  ninja-build
+BuildRequires:  pkgconfig(lua)
+BuildRequires:  pkgconfig(Fcitx5Core)
+BuildRequires:  pkgconfig(Fcitx5Module)
 Requires:       fcitx5-data
 
 %description
@@ -49,7 +53,9 @@ Devel files for fcitx5-lua
 %license LICENSES/LGPL-2.1-or-later.txt
 %doc README.md 
 %{_libdir}/fcitx5/luaaddonloader.so
-%{_datadir}/fcitx5/*
+%{_datadir}/fcitx5/addon/imeapi.conf
+%{_datadir}/fcitx5/addon/luaaddonloader.conf
+%{_datadir}/fcitx5/lua
 
 %files devel
 %{_includedir}/Fcitx5/Module/fcitx-module/luaaddonloader
