@@ -51,6 +51,7 @@ Japanese input method using libskk.
 %{_libdir}/fcitx5/skk.so
 %{_datadir}/fcitx5/addon/skk.conf
 %{_datadir}/fcitx5/inputmethod/skk.conf
+%dir %{_datadir}/fcitx5/skk
 %{_datadir}/fcitx5/skk/dictionary_list
 %{_datadir}/icons/hicolor/64x64/apps/fcitx-skk.png
 
