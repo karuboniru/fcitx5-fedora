@@ -52,8 +52,8 @@ Devel files for fcitx5-lua
 %{_datadir}/fcitx5/*
 
 %files devel
-%{_includedir}/Fcitx5/*
-%{_libdir}/cmake/*
+%{_includedir}/Fcitx5/Module/fcitx-module/luaaddonloader
+%{_libdir}/cmake/Fcitx5ModuleLuaAddonLoader
 
 
 %changelog
