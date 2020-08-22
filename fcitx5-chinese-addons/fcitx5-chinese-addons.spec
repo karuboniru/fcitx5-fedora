@@ -48,6 +48,8 @@ Summary:        Data files of %{name}
 BuildArch:      noarch
 Requires:       %{name} = %{version}-%{release}
 Requires:       hicolor-icon-theme
+Requires:       fcitx5-lua
+Requires:       fcitx5-data
 
 %description data
 The %{name}-data package provides shared data for %{name}.
@@ -90,6 +92,7 @@ ln -s %{S:2} modules/pinyinhelper
 %dir %{_datadir}/fcitx5/pinyinhelper
 %{_datadir}/fcitx5/addon/*.conf
 %{_datadir}/fcitx5/data/gbks2t.tab
+%{_datadir}/fcitx5/inputmethod/*.conf
 %{_datadir}/fcitx5/lua/imeapi/extensions/pinyin.lua
 %{_datadir}/fcitx5/pinyin/*.dict
 %{_datadir}/fcitx5/pinyinhelper/py_*.mb
