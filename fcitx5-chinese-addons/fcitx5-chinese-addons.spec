@@ -14,6 +14,12 @@ Source:         %{forgesource}
 Source1:        https://download.fcitx-im.org/data/py_table-%{dictver}.tar.gz
 Source2:        https://download.fcitx-im.org/data/py_stroke-%{dictver}.tar.gz
 
+# libime test failure, this depends on libime package to 
+# build and run, for more information:
+# - https://github.com/fcitx/libime/issues/4
+# - https://yanqiyu.fedorapeople.org/libime/build.log
+# - https://bugzilla.redhat.com/show_bug.cgi?id=1868849
+ExcludeArch:    i686
 
 BuildRequires:  boost-devel
 BuildRequires:  cmake

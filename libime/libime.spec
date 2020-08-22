@@ -24,6 +24,12 @@ Source2:    https://download.fcitx-im.org/data/lm_sc.3gm.arpa-%{_lm_sc_ver}.tar.
 Source3:    https://download.fcitx-im.org/data/dict.utf8-%{_dict_ver}.tar.xz
 Source4:    https://download.fcitx-im.org/data/table.tar.gz
 
+# Test failure, for more information
+# - https://github.com/fcitx/libime/issues/4
+# - https://yanqiyu.fedorapeople.org/libime/build.log
+# - https://bugzilla.redhat.com/show_bug.cgi?id=1868849
+ExcludeArch:   i686
+
 BuildRequires: cmake
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
