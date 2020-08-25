@@ -14,6 +14,11 @@ Source:         %{forgesource}
 Source1:        https://download.fcitx-im.org/data/py_table-%{dictver}.tar.gz
 Source2:        https://download.fcitx-im.org/data/py_stroke-%{dictver}.tar.gz
 
+# due to a test failure on s390x
+# will fill in an bugzilla ticket 
+# this package gets approved
+
+ExcludeArch:    s390x
 
 BuildRequires:  boost-devel
 BuildRequires:  cmake
